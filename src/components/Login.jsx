@@ -9,11 +9,12 @@ const Login = () => {
 
     const email = useRef(null)
     const password = useRef(null)
+    const name = useRef(null)
     const handleButtonClick=(e)=>{
       e.preventDefault()
       console.log(email.current.value)
       console.log(password.current.value)
-     const messsage= valiatedata(email.current.value,password.current.value)
+     const messsage= valiatedata(email.current.value,password.current.value,name.current.value)
      setErrormessage(messsage)
     
     }
@@ -36,6 +37,7 @@ const Login = () => {
              className='bg-gray-800 text-gray-200 p-2 m-2 w-full border-1 border-gray-400 rounded'/>
              {!isSignInForm && (<input 
             type="text" 
+            ref={name}
             placeholder='Full Name'
              className='bg-gray-800 text-gray-200 p-2 m-2 w-full rounded border-gray-400 border-1'/>)}
             <input 
